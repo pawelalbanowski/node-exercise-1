@@ -1,6 +1,6 @@
 const methods = require("./utilis.js");
 
-var fs = require("fs");
+const fs = require("fs");
 
 fs.readFile("./numbers.txt", "utf-8", (err, data) => {
   if (err) throw err;
