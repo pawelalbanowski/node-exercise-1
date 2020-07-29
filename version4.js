@@ -7,8 +7,8 @@ const fsPromises = fs.promises;
 async function showAmountOdds() {
   try {
     const content = await fsPromises.readFile("./numbers.txt", "utf-8");
-    console.log(content.toString());
     const lines = methods.splitByNewLine(content);
+    console.log(lines);
     const numOdds = methods.countOdd(lines);
     console.log(numOdds);
   } catch (err) {
