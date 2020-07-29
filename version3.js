@@ -16,7 +16,8 @@ const readFileAsArray = (file) => {
 async function showAmountOdds() {
   try {
     const lines = await readFileAsArray("./numbers.txt");
-    console.log(methods.countOdd(lines));
+    const numOdds = methods.countOdd(lines);
+    console.log(numOdds);
   } catch (err) {
     throw err;
   }
