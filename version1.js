@@ -6,12 +6,12 @@ const readFileAsArray = (file, cb) => {
   fs.readFile(file, "utf-8", (err, data) => {
     if (err) throw err;
     const dataArray = methods.splitByNewLine(data);
-    console.log(dataArray);
-    const amountOdds = methods.countOdd(dataArray);
-    console.log(amountOdds);
+    cb(err, dataArray);
   });
 };
 
 readFileAsArray("./numbers.txt", (err, lines) => {
   if (err) throw err;
+  const amountOdds = methods.countOdd(lines);
+  console.log(amountOdds);
 });

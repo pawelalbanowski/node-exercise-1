@@ -1,3 +1,5 @@
+const fs = require('fs');
+
 const methods = {
   splitByNewLine: (text) => {
     return text.split("\r\n");
@@ -8,5 +10,14 @@ const methods = {
       return count + checkIfOdd;
     }, 0);
   },
+  readFileAsArray: (file) => {
+    return new Promise((resolve, reject) => {
+      fs.readFile(file, "utf-8", (err, data) => {
+        if (err) reject(err);
+        const dataArray = methods.splitByNewLine(data);
+        resolve(dataArray);
+      });
+    });
+  }
 };
 module.exports = methods;
